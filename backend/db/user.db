@@ -1,0 +1,43 @@
+
+
+/* Create Table Command
+CREATE TABLE IF NOT EXISTS users  (  
+    id uuid PRIMARY KEY UNIQUE DEFAULT uuid_generate_v4 (),  
+    first_name VARCHAR NOT NULL,  
+    last_name VARCHAR NOT NULL,  
+    username VARCHAR UNIQUE NOT NULL,
+    email VARCHAR UNIQUE NOT NULL,  
+    organisation VARCHAR NOT NULL  
+);  
+
+
+/* See Table Schema 
+
+SELECT 
+   table_name, 
+   column_name, 
+   data_type 
+FROM 
+   information_schema.columns
+WHERE 
+   table_name = 'users';
+
+
+   INSERT INTO users (first_name, last_name, email, organization, username, password)
+                                VALUES ('Utkarsh', 'Pandey', 'utkarshpandey0611@gmail.com', 'JGEC', 'utkarshpandey6', 'Utkarsh_1', 'student') RETURNING username, uuid, first_name, last_name, email, organization, role;
+
+
+
+INSERT INTO employee_ids(employee_id) VALUES (34534534), (45346435), (57456456), (67867876);
+
+SELECT assignments.*, (CASE WHEN EXISTS (SELECT assignment_id FROM assignments_submissions WHERE assignment_id = assignments.id AND submitted_by = $1) THEN TRUE ELSE FALSE END) AS pending
+FROM assignments INNER JOIN classes ON classes.id = assignments.class_id WHERE classes.id IN (SELECT class_id 
+FROM students WHERE user_id = $1);
+
+SELECT assignments.*, (CASE WHEN EXISTS (SELECT assignment_id FROM assignments_submissions WHERE assignment_id = assignments.id AND submitted_by = 'd6565af1-71c0-49ad-91bb-e75587e12dc7') THEN FALSE ELSE TRUE END) AS pending
+FROM assignments INNER JOIN classes ON classes.id = assignments.class_id WHERE classes.id IN (SELECT class_id 
+FROM students WHERE user_id = 'd6565af1-71c0-49ad-91bb-e75587e12dc7');
+
+INSERT INTO scheduled_classes (class_id, offline_strength, start_time, topic)
+                                                VALUES ('e6483658-2cf6-40e4-a63c-e5320e1c1b36', 50, '2016-06-22 19:10:25', 'Paging') RETURNING schedule_id, class_id, offline_strength, start_time, 
+                                                topic;

@@ -1,0 +1,29 @@
+.description-text2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    height: 44px;
+    text-align: left;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.description-text1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    height: 30px;
+    text-align: center;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.description-text1small {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    height: 20px;
+    text-align: left;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
